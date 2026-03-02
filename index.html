@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viljankuivaajan virtauskaavio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Viljankuivaajan virtauskaavio</h1>
+      <p>Vedä laitteita työkalupakista piirtoalueelle ja yhdistä ne putkiksi.</p>
+    </header>
+
+    <main class="layout">
+      <aside class="toolbox" aria-label="Työkalupakki">
+        <h2>Työkalupakki</h2>
+        <div class="tool" draggable="true" data-type="dryer">Kuivurilaite</div>
+        <div class="tool" draggable="true" data-type="elevator">Elevaattori</div>
+        <div class="tool" draggable="true" data-type="splitter2">2-tie jakaja</div>
+        <div class="tool" draggable="true" data-type="splitter3">3-tie jakaja</div>
+        <div class="tool" draggable="true" data-type="splitter6">6-tie jakaja</div>
+        <div class="tool" draggable="true" data-type="fan">Puhallin / imuri</div>
+        <div class="tool" draggable="true" data-type="burner">Öljypoltin</div>
+        <div class="tool" draggable="true" data-type="conveyor">Kuljetin</div>
+      </aside>
+
+      <section class="canvas-wrap">
+        <div class="controls">
+          <button id="connectModeBtn" type="button">Yhdistä laitteita: POIS</button>
+          <button id="clearBtn" type="button">Tyhjennä</button>
+          <span id="status">Valitse tila: vedä laitteita tai aktivoi yhdistäminen.</span>
+        </div>
+
+        <svg id="diagram" viewBox="0 0 1400 900" aria-label="Piirtoalue">
+          <defs>
+            <marker id="pipeArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <polygon points="0 0, 6 3, 0 6" />
+            </marker>
+          </defs>
+          <g id="pipes"></g>
+          <g id="nodes"></g>
+        </svg>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
